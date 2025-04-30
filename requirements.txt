@@ -14,7 +14,7 @@ cachetools==5.5.2
 certifi==2025.1.31
 charset-normalizer==3.4.1
 chroma-hnswlib==0.7.6
-chromadb==1.0.7
+chromadb
 click==8.1.8
 coloredlogs==15.0.1
 databases==0.9.0
@@ -23,7 +23,7 @@ Deprecated==1.2.18
 distro==1.9.0
 durationpy==0.9
 ecdsa==0.19.1
-fastapi==0.115.9
+fastapi
 filelock==3.18.0
 Flask==3.1.0
 flatbuffers==25.2.10

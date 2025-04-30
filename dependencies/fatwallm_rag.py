@@ -4,7 +4,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import ChatPromptTemplate
 from operator import itemgetter
 import os
-import whisper
+import whisper 
 from pytube import YouTube
 import tempfile
 import yt_dlp
