@@ -1,0 +1,232 @@
+# ===================================
+# DeenBot Project .gitignore
+# ===================================
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# API Keys and Secrets
+**/secrets/
+**/keys/
+**/*secret*
+**/*key*.txt
+**/*key*.json
+**/*credentials*
+
+# ===================================
+# Backend (Python/FastAPI)
+# ===================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+database.db
+test.db
+
+# Uploads and Media
+uploads/
+temp_media/
+media/
+static/media/
+
+# Vector Database & AI
+chroma_index/
+chroma_transcriptions/
+*.chroma
+embeddings/
+cache/
+.cache/
+
+# Logs
+*.log
+logs/
+log/
+
+# ===================================
+# Frontend (React/TypeScript/Vite)
+# ===================================
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+*.local
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite
+.vite/
+*.tsbuildinfo
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# ===================================
+# Operating System
+# ===================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===================================
+# Development Tools
+# ===================================
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# ===================================
+# Temporary Files
+# ===================================
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Archive files (unless specifically needed)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ===================================
+# Project Specific
+# ===================================
+
+# Audio/Video files (large files)
+*.mp4
+*.avi
+*.mov
+*.wav
+*.mp3
+*.flac
+*.m4a
+
+# Large data files
+*.csv
+*.json
+!package.json
+!tsconfig.json
+!components.json
+
+# Configuration overrides
+config.local.*
+settings.local.*

@@ -1,0 +1,332 @@
+:root {
+  /* Palette de couleurs principales */
+  --primary: #10b981;
+  --primary-light: #ecfdf5;
+  --primary-dark: #059669;
+  
+  /* Couleurs de fond */
+  --background: #f9fafb;
+  --background-secondary: #f3f4f6;
+  
+  /* Couleurs de texte */
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  /* Couleurs d'accentuation */
+  --accent: #8b5cf6;
+  --accent-light: #ede9fe;
+  
+  /* Autres couleurs fonctionnelles */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+  
+  /* Ombres et effets */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Arrondis */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* Espacement */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  
+  /* Transitions */
+  --transition-normal: all 0.2s ease-in-out;
+  --transition-slow: all 0.3s ease-in-out;
+  --transition-fast: all 0.1s ease-in-out;
+  
+  /* Typographie */
+  --font-sans: 'Cairo', 'Noto Kufi Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Aref Ruqaa', Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Classes utilitaires */
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+/* Styles pour les bulles de chat */
+.chat-bubble {
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+  border-radius: var(--radius-lg);
+  max-width: 85%;
+}
+
+.chat-bubble-user {
+  background-color: #f3f4f6;
+  color: var(--text-primary);
+  margin-left: auto;
+  border-top-right-radius: 4px;
+}
+
+.chat-bubble-assistant {
+  background-color: var(--primary-light);
+  color: var(--text-primary);
+  margin-right: auto;
+  border-top-left-radius: 4px;
+}
+
+/* Styles pour les boutons de question suggérée */
+.suggested-question {
+  background-color: white;
+  color: var(--text-primary);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: 1px solid #e5e7eb;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.suggested-question:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* Styles pour la barre d'entrée de chat */
+.chat-input {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-full);
+  padding: var(--spacing-2) var(--spacing-4);
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.chat-input:focus, .chat-input:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+  outline: none;
+}
+
+/* Effet de survol pour les icônes d'action */
+.action-icon {
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.action-icon:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* Styles pour la barre de navigation */
+.top-navbar {
+  background-color: var(--background-secondary);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-2) var(--spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styles pour les badges d'utilisateur */
+.user-badge {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-weight: 500;
+}
+
+/* Animation pour l'effet de frappe */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: blink 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Section de bienvenue */
+.welcome-section {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--spacing-8);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.welcome-bismillah {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-6);
+}
+
+.welcome-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-4);
+  color: var(--text-primary);
+}
+
+.welcome-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-6);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.suggested-questions-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-6);
+}
+
+/* Styles pour la barre latérale */
+.sidebar {
+  background-color: white;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.chat-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.chat-section {
+  margin-bottom: var(--spacing-4);
+}
+
+.chat-section-title {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.chat-item {
+  padding: var(--spacing-3) var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  transition: var(--transition-normal);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.chat-item:hover {
+  background-color: var(--background-secondary);
+}
+
+.chat-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.chat-item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

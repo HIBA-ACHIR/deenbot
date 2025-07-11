@@ -1,0 +1,17 @@
+/* Cibler spécifiquement l'icône circulaire verte au milieu */
+h2::before, h2::after, p::before, p::after, .welcome-title::after, .welcome-title::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Supprimer spécifiquement l'étoile verte */
+[class*="welcome"]::after, [class*="welcome"]::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Garder les étoiles mais supprimer d'autres décorations potentielles */
+.moroccan-section::before, .moroccan-section::after {
+  content: none !important;
+  display: none !important;
+}

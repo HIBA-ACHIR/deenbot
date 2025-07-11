@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="description" content="DeenBot - Assistant islamique intelligent" />
+    <title>DeenBot - دينبوت</title>
+    <script>
+      // Script d'initialisation pour forcer l'utilisation de la connexion à la base de données
+      window.USE_DATABASE = true;
+      window.GUEST_USER_ID = 'guest_' + Date.now().toString(36);
+      
+      // Détecter et stocker la langue préférée de l'utilisateur
+      const userLang = navigator.language || navigator.userLanguage;
+      document.documentElement.lang = userLang.startsWith('ar') ? 'ar' : 'en';
+      document.documentElement.dir = userLang.startsWith('ar') ? 'rtl' : 'ltr';
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>Vous avez besoin de JavaScript pour utiliser cette application.</noscript>
+  </body>
+</html>

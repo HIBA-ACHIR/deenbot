@@ -1,0 +1,337 @@
+/* Import Google Fonts for Arabic support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&display=swap');
+/* Import Amiri for traditional Islamic calligraphy aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Import Scheherazade New for Quranic text styling */
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
+/* Import Aref Ruqaa for elegant Islamic headings */
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
+/* Import Reem Kufi for clean modern Islamic typography */
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for HasaniyaLessons component */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Custom Arabic text styles */
+.islamic-title {
+  font-family: 'Aref Ruqaa', serif;
+  letter-spacing: -0.5px;
+}
+
+.islamic-pill {
+  transition: all 0.2s ease;
+}
+
+.islamic-pill:hover {
+  transform: translateY(-2px);
+}
+
+.islamic-pill.active {
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(37, 182, 117, 0.2);
+}
+
+@layer base {
+  :root {
+    /* Moroccan Zellij Pattern Variables */
+    --zellij-bg-pattern: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%2325b675' fill-opacity='0.03' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'%3E%3C/path%3E%3C/svg%3E");
+    
+    --zellij-card-pattern: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-100 100l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM120 49v2h-20v-2h20zm-84.134 18.84l-1.732-1 10-17.32 1.732 1-10 17.32zM40 69v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 64l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 80h-2V60h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-100 100l1.732 1-10 17.32-1.732-1 10-17.32zM40 89v2H20v-2h20zm40 0v2H60v-2h20zm19.32 5l-1 1.732-17.32-10L82 84l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 100h-2V80h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM0 71.32l20-11.55v23.1L0 71.32zM120 71.32L100 59.77v23.1l20-11.55zM51.32 0L40 20h23.1L51.32 0zM51.32 120L40 100h23.1L51.32 120z' fill='%2325b675' fill-opacity='0.08'%3E%3C/path%3E%3C/svg%3E");
+    
+    --zellij-section-pattern: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2325b675' fill-opacity='0.07'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Bright white background */
+  --background: 0 0% 100%;
+  /* Dark text for contrast */
+  --foreground: 220 10% 20%;
+
+  /* Card with white background */
+  --card: 0 0% 100%;
+  --card-foreground: 220 10% 20%;
+
+  /* Popover with white background */
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 10% 20%;
+
+    /* More vibrant green primary color */
+    --primary: 152 85% 50%;
+  --primary-foreground: 0 0% 100%;
+
+    /* Brighter yellow secondary color */
+    --secondary: 45 100% 65%;
+    --secondary-foreground: 220 10% 20%;
+
+    /* Enhanced muted color */
+    --muted: 152 25% 95%;
+    --muted-foreground: 220 10% 40%;
+
+    /* More visible accent color */
+    --accent: 152 40% 92%;
+    --accent-foreground: 152 85% 35%;
+
+    /* Brighter red for destructive actions */
+    --destructive: 0 85% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+    /* Borders with more visible green tint */
+    --border: 152 40% 90%;
+    --input: 152 40% 90%;
+    --ring: 152 85% 50%;
+
+    --radius: 1rem;
+
+    /* Sidebar with more vibrant green background */
+    --sidebar-background: 152 85% 50%;
+    --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 45 100% 65%;
+  --sidebar-primary-foreground: 220 20% 12%;
+  --sidebar-accent: 152 50% 40%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 152 50% 40%;
+  --sidebar-ring: 45 100% 65%;
+}
+
+.dark {
+  /* Dark background */
+  --background: 220 20% 12%;
+  /* Light text */
+  --foreground: 0 0% 95%;
+
+    /* Card with slightly lighter dark */
+    --card: 220 20% 15%;
+    --card-foreground: 0 0% 95%;
+
+    /* Popover with slightly lighter dark */
+    --popover: 220 20% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    /* More vibrant green primary color */
+    --primary: 152 85% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Brighter yellow secondary color */
+    --secondary: 45 100% 65%;
+    --secondary-foreground: 220 20% 12%;
+
+    /* Enhanced muted dark green */
+    --muted: 152 35% 25%;
+    --muted-foreground: 152 25% 75%;
+
+    /* More visible darker accent */
+    --accent: 152 55% 30%;
+    --accent-foreground: 0 0% 95%;
+
+    /* Brighter destructive red adjusted for dark mode */
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    /* Borders with more visible green tint */
+    --border: 152 40% 30%;
+    --input: 152 40% 30%;
+    --ring: 152 85% 53%;
+    
+    /* Sidebar with more vibrant darker green */
+    --sidebar-background: 152 60% 40%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 100% 65%;
+    --sidebar-primary-foreground: 220 20% 12%;
+    --sidebar-accent: 152 50% 40%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 152 50% 40%;
+    --sidebar-ring: 45 100% 65%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Aref Ruqaa', 'Amiri', serif;
+  }
+
+  h1 {
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 60px;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
+    border-radius: var(--radius);
+  }
+
+  .arabic-text {
+    font-family: 'Scheherazade New', serif;
+  }
+
+  /* Modern headings with Islamic aesthetics */
+  .islamic-heading {
+    font-family: 'Aref Ruqaa', serif;
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+  }
+
+  .islamic-heading::before,
+  .islamic-heading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    transform: translateY(-50%);
+  }
+
+  .islamic-heading::before {
+    left: -40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%2325b675'%3E%3Cpath d='M50,0 L60,40 L100,50 L60,60 L50,100 L40,60 L0,50 L40,40 z'/%3E%3C/svg%3E");
+  }
+
+  .islamic-heading::after {
+    right: -40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%2325b675'%3E%3Cpath d='M50,0 L60,40 L100,50 L60,60 L50,100 L40,60 L0,50 L40,40 z'/%3E%3C/svg%3E");
+  }
+
+  /* Enhanced decorative divider inspired by Islamic geometric patterns */
+  .islamic-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(to right, transparent, hsl(var(--border)), transparent);
+    margin: 2rem 0;
+  }
+
+  .islamic-divider::before {
+    content: '۞';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(var(--background));
+    padding: 0 1rem;
+    color: hsl(var(--primary));
+    font-size: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Decorative corners for cards and containers */
+  .islamic-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: hsl(var(--card));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .islamic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--zellij-card-pattern);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+
+  /* Card with subtle border ornament */
+  .ornament-card {
+    position: relative;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    background-color: hsl(var(--card));
+  }
+
+  .ornament-card::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: calc(var(--radius) - 4px);
+    pointer-events: none;
+  }
+
+  /* Islamic buttons */
+  .islamic-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .islamic-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+  }
+
+  .islamic-button:hover::before {
+    left: 100%;
+  }
+
+  /* Subtle Moroccan pattern for section backgrounds */
+  .moroccan-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .moroccan-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--zellij-section-pattern);
+    background-size: 300px;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+}

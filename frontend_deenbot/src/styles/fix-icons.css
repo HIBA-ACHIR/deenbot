@@ -1,0 +1,44 @@
+/* Suppression spécifique de l'étoile verte circulaire */
+h2::after, h2::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Force la suppression de tous les éléments décoratifs après les titres */
+*[dir="rtl"]::before, *[dir="rtl"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Supprime les éléments décoratifs de la section d'accueil */
+.moroccan-section > * > *::after,
+.moroccan-section > * > *::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Préserve les étoiles à côté du bismillah */
+h1.islamic-heading::before {
+  display: inline !important;
+  content: "✦ " !important;
+  color: #10b981 !important;
+}
+
+h1.islamic-heading::after {
+  display: inline !important;
+  content: " ✦" !important;
+  color: #10b981 !important;
+}
+
+/* Réduit l'espace entre les éléments */
+h1.islamic-heading {
+  margin-bottom: 4px !important;
+}
+
+h2 {
+  margin-top: 0 !important;
+}
+
+p[dir="rtl"] {
+  margin-top: 8px !important;
+}
